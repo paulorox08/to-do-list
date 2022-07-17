@@ -1,5 +1,17 @@
 body {
     height: 100vh;
+    margin: 0;
+    padding: 0%;
     width: 100%;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 40%;
+    height: 90%;
+    background-color: gray;
+    border-radius: 30px;
 }
