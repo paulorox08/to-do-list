@@ -1,6 +1,5 @@
 import './style.css';
 
-let myProjects = [];
 let myList = [];
 
 function createTitle() {
@@ -15,14 +14,14 @@ function createTitle() {
 
 createTitle();
 
-function addProject() {
-    const container = document.querySelector('.container');
+function projectButton() {
+    const container = document.querySelector('.projectsContainer');
 
-    const addProject = document.createElement('div');
-    addProject.className = "addProject";
-    addProject.innerText = "Add Project";
+    const projectButton = document.createElement('div');
+    projectButton.className = "projectButton";
+    projectButton.innerText = "Add Project";
 
-    container.appendChild(addProject);
+    container.appendChild(projectButton);
 };
 
-addProject();
+projectButton();
