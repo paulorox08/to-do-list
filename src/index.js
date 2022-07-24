@@ -1,5 +1,7 @@
 import './style.css';
 
+import {addAProject} from './projects.js';
+
 let myList = [];
 
 function createTitle() {
@@ -25,3 +27,4 @@ function projectButton() {
 };
 
 projectButton();
+addAProject();
