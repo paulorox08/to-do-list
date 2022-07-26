@@ -1,30 +1,31 @@
 import './style.css';
 
-import {addAProject} from './projects.js';
+import {addAProject, projectModal} from './projects.js';
 
 let myList = [];
 
 function createTitle() {
-    const container = document.querySelector('.container');
+    const title = document.querySelector('.title');
 
     const name = document.createElement('div');
     name.className = "name";
     name.innerText = ".list";
 
-    container.appendChild(name);
+    title.appendChild(name);
 };
 
 createTitle();
 
 function projectButton() {
-    const container = document.querySelector('.projectsContainer');
+    const projectsButton = document.querySelector('.projectsButton');
 
     const projectButton = document.createElement('div');
     projectButton.className = "projectButton";
     projectButton.innerText = "Add Project";
 
-    container.appendChild(projectButton);
+    projectsButton.appendChild(projectButton);
 };
 
 projectButton();
+projectModal();
 addAProject();

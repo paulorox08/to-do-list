@@ -17,11 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
-.name {
-    position: absolute;
+.title {
     top: 2%;
     font-family: 'Roboto', sans-serif;
     font-size: 54px;
@@ -40,7 +38,7 @@ body {
     }
 }
 
-.projectButton {
+.projectsButton {
     border: dashed 3px black;
     font-family: 'Roboto', sans-serif;
     padding: 5px;
@@ -61,3 +59,21 @@ body {
     top: 15%;
 }
 
+.projectModal {
+    visibility: hidden;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectModalContent {
+    width: 30%;
+    height: 20%;
+    background-color: white;
+}
