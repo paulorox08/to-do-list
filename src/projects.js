@@ -1,8 +1,19 @@
 let myProjects = [];
 
-function Projects(name) {
-    this.name = name;
-}
+class Projects{
+    constructor(name) {
+        this.name = name;
+    }
+};
+
+Projects.prototype.createProject = function() {
+    const projectsContainer = document.querySelector('.projectsContainer');
+
+    const projectName = document.createElement('div');
+    projectName.innerText = newProject.name;
+
+    projectsContainer.appendChild(projectName)
+};
 
 function createModal() {
     const body = document.querySelector('body');
@@ -16,6 +27,21 @@ function createModal() {
     projectModalContent.className = "projectModalContent";
 
     projectModal.appendChild(projectModalContent);
+
+    const askTitle = document.createElement('div');
+    askTitle.className = 'askTitle';
+    askTitle.innerText = "Enter Project Name";
+    projectModalContent.appendChild(askTitle);
+
+    const askName = document.createElement('input');
+    askName.className = 'askName';
+    projectModalContent.appendChild(askName);
+
+    const submit = document.createElement('input');
+    submit.className = 'submit';
+    submit.type = 'submit'
+    submit.value = "Enter";
+    projectModalContent.appendChild(submit);
 }
 
 function projectModal() {
@@ -31,15 +57,15 @@ function projectModal() {
 export {projectModal};
 
 function addAProject() {
-    const projectButton = document.querySelector('.projectButton');
-    const projectsButton = document.querySelector('.projectsButton');
+    let askName = document.querySelector('.askName');
 
-    projectButton.addEventListener('click', () => {
-        const askName = document.createElement('input');
-        projectsButton.appendChild(askName);
+    newProject = new Projects(askName.value);
+    myProjects.push(newProject);
 
-        const submit = document.createElement('button');
-        projectsButton.appendChild(submit);
+    const submit = document.querySelector('.submit');
+
+    submit.addEventListener('click', () => {
+        newProject.createProject();
     })
 }
 

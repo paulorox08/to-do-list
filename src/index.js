@@ -1,4 +1,5 @@
 import './style.css';
+import './projects.css';
 
 import {addAProject, projectModal} from './projects.js';
 
