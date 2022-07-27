@@ -45,6 +45,8 @@ function Project(stuff) {
     this.stuff = stuff;
 };
 
+export {Project};
+
 Project.prototype.createProject = function() {
     const projectsContainer = document.querySelector('.projectsContainer');
 

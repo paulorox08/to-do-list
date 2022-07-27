@@ -1,7 +1,8 @@
 import './style.css';
 import './projects.css';
+import { compareAsc, format } from 'date-fns';
 
-import {projectModal, add, createProject} from './projects.js';
+import {projectModal, add} from './projects.js';
 
 let myList = [];
 
