@@ -14,10 +14,6 @@
     }
 }
 
-.projectsContainer {
-    position: absolute;
-    top: 15%;
-}
 
 .projectModal {
     visibility: hidden;
@@ -50,4 +46,8 @@
 .submit {
     width: fit-content;
     padding: 1%;
+}
+
+.projectsContainer {
+    text-align: center;
 }
