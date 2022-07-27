@@ -1,7 +1,7 @@
 import './style.css';
 import './projects.css';
 
-import {addAProject, projectModal} from './projects.js';
+import {projectModal, add, createProject} from './projects.js';
 
 let myList = [];
 
@@ -29,4 +29,4 @@ function projectButton() {
 
 projectButton();
 projectModal();
-addAProject();
+add();

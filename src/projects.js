@@ -1,20 +1,5 @@
 let myProjects = [];
 
-class Projects{
-    constructor(name) {
-        this.name = name;
-    }
-};
-
-Projects.prototype.createProject = function() {
-    const projectsContainer = document.querySelector('.projectsContainer');
-
-    const projectName = document.createElement('div');
-    projectName.innerText = newProject.name;
-
-    projectsContainer.appendChild(projectName)
-};
-
 function createModal() {
     const body = document.querySelector('body');
 
@@ -34,7 +19,7 @@ function createModal() {
     projectModalContent.appendChild(askTitle);
 
     const askName = document.createElement('input');
-    askName.className = 'askName';
+    askName.id = 'askName';
     projectModalContent.appendChild(askName);
 
     const submit = document.createElement('input');
@@ -42,7 +27,7 @@ function createModal() {
     submit.type = 'submit'
     submit.value = "Enter";
     projectModalContent.appendChild(submit);
-}
+};
 
 function projectModal() {
     createModal();
@@ -52,21 +37,38 @@ function projectModal() {
     projectButton.addEventListener('click', () => {
         projectModal.style.visibility = 'visible';
     })
-}
+};
 
 export {projectModal};
 
+function Project(stuff) {
+    this.stuff = stuff;
+};
+
+Project.prototype.createProject = function() {
+    const projectsContainer = document.querySelector('.projectsContainer');
+
+    const projectName = document.createElement('div');
+    projectName.innerText = document.querySelector('#askName').value;
+
+    projectsContainer.appendChild(projectName);
+};
+
 function addAProject() {
-    let askName = document.querySelector('.askName');
-
-    newProject = new Projects(askName.value);
+    let newProject = new Project(document.querySelector('#askName').value);
     myProjects.push(newProject);
+    newProject.createProject();
+};
 
+function add() {
     const submit = document.querySelector('.submit');
 
     submit.addEventListener('click', () => {
-        newProject.createProject();
+        addAProject();
+        const projectModal = document.querySelector('.projectModal');
+        projectModal.style.visibility = 'hidden';
+        console.log(myProjects)
     })
 }
 
-export {addAProject};
+export {add};
